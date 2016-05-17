@@ -1,0 +1,3 @@
+# node-boilerplate
+
+Work in progress, not yet functional...
