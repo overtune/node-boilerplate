@@ -1,0 +1,43 @@
+{
+  "name": "node-boilerplate",
+  "version": "1.0.0",
+  "description": "A base boilerpate for NodeJs projects.",
+  "author": {
+    "name": "Johan Runesson",
+    "email": "info@johanrunesson.se"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/overtune/node-boilerplate"
+  },
+  "scripts": {
+    "build": "npm-run-all build:**",
+    "start": "npm run build && npm-run-all --parallel server watch:**",
+    "watch:livereload": "livereload public/assets/build",
+    "build:js": "webpack",
+    "watch:js": "npm run build:js -- --watch",
+    "jshint": "node_modules/jshint/bin/jshint public/assets/js/",
+    "watch:jshint": "watch 'npm run jshint' public/assets/js",
+    "jscs": "node_modules/jscs/bin/jscs public/assets/js/",
+    "watch:jscs": "watch 'npm run jscs' public/assets/js",
+    "build:sass": "./node_modules/node-sass/bin/node-sass --output-style=compressed public/assets/sass/ --output public/assets/build/css/",
+    "watch:sass": "nodemon -e scss -w public/assets/sass/ -x 'npm run build:sass'",
+    "server": "node main.js"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "pug": "^2.0.0-alpha7"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.9",
+    "jscs": "^3.0.3",
+    "jshint": "^2.9.2",
+    "livereload": "^0.4.1",
+    "node-sass": "^3.7.0",
+    "nodemon": "^1.9.2",
+    "npm-run-all": "^2.1.0",
+    "watch": "^0.18.0",
+    "webpack": "^1.13.0",
+    "webpack-notifier": "^1.3.0"
+  }
+}

@@ -1,0 +1,18 @@
+{
+	"predef": [
+		"define",
+		"mainConfig",
+		"alert",
+		"confirm",
+		"require",
+		"exports",
+		"global",
+		"__dirname"
+	],
+	"strict": true,
+	"jquery": true,
+	"browser": true,
+	"white": true,
+	"esversion": 3,
+	"unused": true
+}
