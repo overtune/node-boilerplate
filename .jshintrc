@@ -13,6 +13,5 @@
 	"jquery": true,
 	"browser": true,
 	"white": true,
-	"esversion": 3,
 	"unused": true
 }

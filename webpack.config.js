@@ -14,6 +14,20 @@ module.exports = {
 		filename: '[name].js',
 		chunkFilename: 'partial.[name].js'
 	},
+	module: {
+	        preLoaders: [
+				{
+					test: /\.js$/,
+					loader: 'eslint-loader',
+					exclude: [/node_modules/, 'public/assets/js/libs'],
+				}
+				/*{
+	                test: /\.js$/, // include .js files
+	                exclude: [/node_modules/, 'public/assets/js/libs'], // exclude any and all files in the node_modules folder
+	                loader: 'jshint-loader'
+	            }*/
+	        ]
+	    },
 	resolve: {
 		modulesDirectories: ['public/assets/js', 'node_modules']
 	},
