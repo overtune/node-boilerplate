@@ -30,8 +30,10 @@ define([], function () {
 		 * @public
 		 */
 		forEachElement: function (selector, fn) {
-			var elements = document.querySelectorAll(selector);
-			for (var i = 0; i < elements.length; i++) {
+			var elements = document.querySelectorAll(selector),
+				i;
+
+			for (i = 0; i < elements.length; i++) {
 				fn(elements[i], i);
 			}
 		},
@@ -250,17 +252,17 @@ define([], function () {
 		 * @public
 		 */
 		formToArray: function (form) {
-			var field, l, s = [];
+			var field, l, s = [], i, j, len;
 
 			if (typeof form == 'object' && form.nodeName == 'FORM') {
-				var len = form.elements.length;
+				len = form.elements.length;
 
-				for (var i = 0; i < len; i++) {
+				for (i = 0; i < len; i++) {
 					field = form.elements[i];
 					if (field.name && !field.disabled && field.type != 'file' && field.type != 'reset' && field.type != 'submit' && field.type != 'button') {
 						if (field.type == 'select-multiple') {
 							l = form.elements[i].options.length;
-							for (var j = 0; j < l; j++) {
+							for (j = 0; j < l; j++) {
 								if (field.options[j].selected) {
 									s[s.length] = { name: field.name, value: field.options[j].value };
 								}
@@ -298,9 +300,12 @@ define([], function () {
 		objectByString: function (o, s) {
 			s = s.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
 			s = s.replace(/^\./, '');           // strip a leading dot
-			var a = s.split('.');
-			for (var i = 0, n = a.length; i < n; ++i) {
-				var k = a[i];
+
+			var a = s.split('.'),
+				i, n, k;
+
+			for (i = 0, n = a.length; i < n; ++i) {
+				k = a[i];
 				if (k in o) {
 					o = o[k];
 				} else {
@@ -347,7 +352,7 @@ define([], function () {
 			};
 
 			// add animation loop
-			function tick() {
+			function tick () {
 				currentTime += 1 / 60;
 
 				var p = currentTime / time,

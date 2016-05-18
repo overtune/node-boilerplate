@@ -18,3 +18,22 @@ rules:
   no-empty: ["error", { "allowEmptyCatch": true }]
   strict: ["error", "function"]
   quotes: ["error", "single"]
+  curly: "error"
+  keyword-spacing: ["error", { "before": true, "after": true }]
+  space-before-function-paren: ["error", "always"]
+  wrap-iife: ["error", "any"]
+  one-var: ["error", "always"]
+  space-in-parens: ["error", "never"]
+  object-curly-spacing: ["error", "always"]
+  semi: ["error", "always"]
+  comma-style: ["error", "last"]
+  operator-linebreak: ["error", "after"]
+  semi-spacing: "error"
+  space-infix-ops: "error"
+  comma-spacing: ["error", { "before": false, "after": true }]
+  no-with: "error"
+  no-trailing-spaces: "error"
+  dot-notation: ["error", { "allowKeywords": false }]
+  quote-props: ["warn", "as-needed"]
+  linebreak-style: ["warn", "unix"]
+  new-cap: "warn"
